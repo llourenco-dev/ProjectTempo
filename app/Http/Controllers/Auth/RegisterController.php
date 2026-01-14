@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
-    public function getLogin(){
+    public function getRegister(){
         return view('app');
     }
 }
