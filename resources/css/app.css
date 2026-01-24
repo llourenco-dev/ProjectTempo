@@ -1,11 +1,187 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@font-face {
+    font-family: 'Indie Flower';
+    src: url('../fonts/IndieFlower-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@font-face{
+    font-family: 'Inspiration Regular';
+    src: url('../fonts/Inspiration-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Indie Flower', cursive;
+    background-image: radial-gradient(#D2DCB6, #F1F3E0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 18px;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    width: 900px;
+    height: 550px;
+    background: #F1F3E0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: #778873 2px solid;
+}
+
+.column {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-register {
+    border-right: #778873 2px solid;
+}
+
+.left-register input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #9aaa8f;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    outline: none;
+}
+
+.right-register {
+    background: #fffdf5;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-register img {
+    transform: scale(1.2);
+}
+
+.right-login {
+    border-left: #778873 2px solid;
+}
+
+.right-login input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #9aaa8f;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    outline: none;
+}
+
+.left-login {
+    background: #fffdf5;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-login img {
+    transform: scale(1.2);
+}
+
+.title{
+    font-family: 'Inspiration Regular', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #778873;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    padding: 0.2rem;
+    color: #778873;
+    background: #D2DCB6;
+    border: #778873 1px solid;
+    border-radius: 999px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
+}
+
+.or-line {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 1rem 0;
+}
+
+.or-line span:first-child,
+.or-line span:last-child {
+    flex: 1;
+    height: 1px;
+    background-color: #9aaa8f;
+}
+
+.or {
+    margin: 0 0.75rem;
+    opacity: 0.7;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-color: #CED6B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35%;
+    box-shadow: 0 0px 10px 0 #97a797, 0 0px 10px 0 #97a797;
+}
+
+.social-btn img {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.4));
+}
+
+.link {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #778873;
+    display: flex;
+    justify-content: center;
+}
+
+.start_images{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+:root {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+                 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
