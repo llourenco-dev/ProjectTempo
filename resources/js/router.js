@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from './views/Login.vue'
+import Dashboard from './views/Dashboard.vue'
 import Register from './views/Register.vue'
+import NotFound from './views/NotFound.vue'
+import MasterLayout from './components/MasterLayout.vue'
 
 const routes = [
   {
@@ -14,8 +17,25 @@ const routes = [
     component: Register
   },
   {
+    path: '/dashboard',
+    component: MasterLayout,
+    children: [
+      {
+        path: '',
+        name: 'dashboard',
+        component: Dashboard,
+        meta: { requiresAuth: true }
+      }
+    ]
+  },
+  {
     path: '/',
     redirect: '/login'
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

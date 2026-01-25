@@ -3,7 +3,7 @@
     <div class="card">
       <div class="column left-login">
         <img
-          src="/storage/app/public/images/register_img.png"
+          src="/storage/app/public/images/login_img.png"
           alt="Register Image"
         />
       </div>
@@ -15,7 +15,7 @@
         <input type="password" placeholder="Password" />
         
         <router-link
-          to="/register"
+          to="/forgot-password"
           class="link" style="align-self: flex-end; font-size: 14px;"
         >
           Forgot your password?

@@ -13,3 +13,11 @@ Route::get('/', function () {
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.form');
 
 Route::get('/login', [LoginController::class, 'getLogin'])->name('login.form');
+
+Route::get('/dashboard', function () {
+    return view('app');
+})->name('dashboard');
+
+Route::get('/{any}', function () {
+    return view('app');
+})->where('any', '.*');
