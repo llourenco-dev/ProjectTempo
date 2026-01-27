@@ -24,7 +24,6 @@ const routes = [
         path: '',
         name: 'dashboard',
         component: Dashboard,
-        meta: { requiresAuth: true }
       }
     ]
   },
