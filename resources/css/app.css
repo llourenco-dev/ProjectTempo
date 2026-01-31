@@ -22,10 +22,12 @@
 }
 
 header{
-    background-color: #f0f0e0;
+    backdrop-filter: blur(5px);
     padding-left: 5rem;
     padding-right: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
 }
 
 header .icon{
@@ -358,6 +360,13 @@ body {
     background-color: #ecebe1;
     padding: 1rem;
     border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.container .today-content .task-item:hover{
+    background-color: #e7e6da;
+    cursor: pointer;
 }
 
 .container .today-content .task-item .content-time{
@@ -370,6 +379,73 @@ body {
     margin-right: 1rem;
 }
 
-.content-time .time{
+.task-item .content-title{
+    color: #505b4d;
+    font-weight: bold;
+}
+
+.task-item .content-category{
+    color: #505b4d;
+}
+
+.content-time .start-time{
     line-height: 1.1;
+    color: #778873;
+
+}
+
+.task-item .end-time{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: #778873;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal {
+    background: #fffdf5;
+    padding: 1.5rem;
+    border-radius: 20px;
+    width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: #778873 2px solid;
+}
+
+.modal-title {
+    font-size: 2rem;
+    color: #778873;
+    margin-bottom: 1rem;
+}
+
+.modal-category {
+    font-size: 1rem;
+    color: #778873;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.modal-time {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #505b4d;
+}
+
+.modal-close {
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    background: #D2DCB6;
+    border: #778873 1px solid;
+    cursor: pointer;
+    font-size: 16px;
 }
