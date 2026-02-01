@@ -49,7 +49,8 @@
                     title: 'Task 1 Title',
                     category: 'Category Name',
                     start: '10:00 AM',
-                    end: '11:00 AM'
+                    end: '11:00 AM',
+                    date: 'Sunday, February 1, 2026'
                 })">
                     <div class="content-time">
                         <p class="start-time" style="padding-top: 4px;">
@@ -77,7 +78,8 @@
                     title: 'Task 2 Title',
                     category: 'Category Name',
                     start: '12:00 PM',
-                    end: '1:00 PM'
+                    end: '1:00 PM',
+                    date: 'Sunday, February 1, 2026'
                 })">
                     <div class="content-time">
                         <p class="start-time" style="padding-top: 4px;">
@@ -114,20 +116,54 @@
             </div>
         </div>
 
-        <div v-if="showModal" class="modal-backdrop" @click.self="closeModal">
-            <div class="modal" @click="closeModal">
-                <div class="modal-header">
-                    <p>close</p>
-                    <h2 class="modal-title">{{ selectedTask.title }}</h2>
-                    <p>Activity Details</p>
-                    <p class="modal-category">{{ selectedTask.category }}</p>
-                </div>
+        <transition name="modal-fade">
+            <div
+                v-if="showModal"
+                class="modal-backdrop"
+                @click.self="closeModal"
+            >
+                <div class="modal" @click.stop>
+                    <div class="modal-header"> 
+                        <img
+                            src="/storage/app/public/images/close_icon.png"
+                            alt="Close"
+                            style="float: right; cursor: pointer;"
+                            @click="closeModal"
+                        />
+                        <h2 class="modal-title">{{ selectedTask.title }}</h2> 
+                        <p style="color: var(--primary-color); margin-bottom: 1.5rem;">Activity Details</p> 
+                        
+                        <div class="modal-category"> 
+                            <img src="/storage/app/public/images/label_icon.png" alt="Label" style="cursor: default;"> 
+                            <span>{{ selectedTask.category }}</span> 
+                        </div> 
+                    </div> 
+                    
+                    <div class="modal-time"> 
+                        <img src="/storage/app/public/images/clock_icon.png" alt="Clock" style="cursor: default;"> 
+                        <span>Start Time:</span> <span style="font-weight: normal; color: var(--primary-color);">{{ selectedTask.start }}</span> 
+                    </div> 
 
-                <p class="modal-time">
-                    {{ selectedTask.start }} → {{ selectedTask.end }}
-                </p>
+                    <br> 
+
+                    <div class="modal-time"> 
+                        <img src="/storage/app/public/images/clock_icon.png" alt="Clock" style="cursor: default;"> 
+                        <span>End Time:</span> <span style="font-weight: normal; color: var(--primary-color);">{{ selectedTask.end }}</span> 
+                    </div> 
+                    
+                    <hr> 
+                    
+                    <div class="modal-time"> 
+                        <img src="/storage/app/public/images/calendar_icon2.png" alt="Clock" style="cursor: default;"> 
+                        <span>Date:</span> <span style="font-weight: normal; color: var(--primary-color);">{{ selectedTask.date }}</span> 
+                    </div> 
+                    
+                    <div class="modal-duration"> 
+                        <span>Duration: 60 minutes</span> 
+                    </div>
+                </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 

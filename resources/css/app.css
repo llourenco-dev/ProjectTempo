@@ -19,6 +19,13 @@
 :root {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
                  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --primary-bg-color: #f0f0e0;
+    --primary-color: #778873;
+
+    --card-bg-color: #F1F3E0;
+
+    --secondary-color: #505b4d;
 }
 
 header{
@@ -64,7 +71,7 @@ nav ul li{
     display: inline-block;
     margin-right: 40px;
     font-weight: bold;
-    color: #556B2F;
+    color: var(--primary-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -84,8 +91,14 @@ nav ul li span{
 
 body {
     font-family: 'Indie Flower', cursive;
-    background-color: #f0f0e0;
+    background-color: var(--primary-bg-color);
     font-size: 18px;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1.5rem 0;
 }
 
 .content {
@@ -99,11 +112,11 @@ body {
     display: flex;
     width: 900px;
     height: 550px;
-    background: #F1F3E0;
+    background: var(--card-bg-color);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: #778873 2px solid;
+    border: var(--primary-color) 2px solid;
 }
 
 .column {
@@ -115,7 +128,7 @@ body {
 }
 
 .left-register {
-    border-right: #778873 2px solid;
+    border-right: var(--primary-color) 2px solid;
 }
 
 .left-register input {
@@ -127,18 +140,12 @@ body {
     outline: none;
 }
 
-.right-register {
-    background: #fffdf5;
-    align-items: center;
-    justify-content: center;
-}
-
 .right-register img {
     transform: scale(1.2);
 }
 
 .right-login {
-    border-left: #778873 2px solid;
+    border-left: var(--primary-color) 2px solid;
 }
 
 .right-login input {
@@ -150,12 +157,6 @@ body {
     outline: none;
 }
 
-.left-login {
-    background: #fffdf5;
-    align-items: center;
-    justify-content: center;
-}
-
 .left-login img {
     transform: scale(1.2);
 }
@@ -165,15 +166,15 @@ body {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
-    color: #778873;
+    color: var(--primary-color);
 }
 
 .btn-primary {
     margin-top: 1rem;
     padding: 0.2rem;
-    color: #778873;
+    color: var(--primary-color);
     background: #D2DCB6;
-    border: #778873 1px solid;
+    border: var(--primary-color) 1px solid;
     border-radius: 999px;
     font-size: 24px;
     cursor: pointer;
@@ -230,7 +231,7 @@ body {
     border: none;
     text-decoration: underline;
     cursor: pointer;
-    color: #778873;
+    color: var(--primary-color);
     display: flex;
     justify-content: center;
 }
@@ -281,13 +282,13 @@ body {
 
 .container h1{
     font-size: 4rem;
-    color: #778873;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 .container h3{
     font-size: 2rem;
-    color: #778873;
+    color: var(--primary-color);
 }
 
 .container .current-task{
@@ -297,7 +298,7 @@ body {
     padding: 1rem 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: #778873 1px solid;
+    border: var(--primary-color) 1px solid;
 }
 
 .container .task-header{
@@ -314,7 +315,7 @@ body {
 
 .container .task-header h2{
     font-size: 2rem;
-    color: #505b4d;
+    color: var(--secondary-color);
     margin: 0;
     font-weight: bold;
 }
@@ -326,21 +327,21 @@ body {
 
 .container .current-task .task-content .content-title{
     font-size: 30px;
-    color: #778873;
+    color: var(--secondary-color);
     font-weight: bolder;
     margin-bottom: 20px;
 }
 
 .container .current-task .task-content .content-category{
     font-size: 15px;
-    color: #778873;
+    color: var(--primary-color);
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .container .current-task .task-content .content-time{
     font-size: 15px;
-    color: #778873;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -351,7 +352,7 @@ body {
     padding: 1rem 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: #778873 1px solid;
+    border: var(--primary-color) 1px solid;
 }
 
 .container .today-content .task-item{
@@ -380,17 +381,17 @@ body {
 }
 
 .task-item .content-title{
-    color: #505b4d;
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
 .task-item .content-category{
-    color: #505b4d;
+    color: var(--secondary-color);
 }
 
 .content-time .start-time{
     line-height: 1.1;
-    color: #778873;
+    color: var(--primary-color);
 
 }
 
@@ -398,7 +399,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto;
-    color: #778873;
+    color: var(--primary-color);
 }
 
 /* Modal Styles */
@@ -414,38 +415,66 @@ body {
 }
 
 .modal {
-    background: #fffdf5;
+    background: #ecebe1;
     padding: 1.5rem;
     border-radius: 20px;
     width: 500px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: #778873 2px solid;
+    border: var(--primary-color) 2px solid;
 }
 
 .modal-title {
     font-size: 2rem;
-    color: #778873;
-    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-weight: bold;
 }
 
 .modal-category {
     font-size: 1rem;
-    color: #778873;
+    color: var(--primary-color);
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
 }
 
-.modal-time {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #505b4d;
+.modal-category span{
+    text-transform: uppercase;
+    margin-left: 1rem;
+    background-color: #d7d6bf;
+    color: var(--secondary-color);
+    padding: 4px 12px 2px 12px;
+    border-radius: 16px;
 }
 
-.modal-close {
-    padding: 0.4rem 1.2rem;
-    border-radius: 999px;
-    background: #D2DCB6;
-    border: #778873 1px solid;
+.modal img {
+    height: 15px;
+    width: auto;
     cursor: pointer;
-    font-size: 16px;
+}
+
+.modal-time{
+    display: inline-flex;
+    align-items: center;
+}
+
+.modal-time span{
+    margin-left: 1rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.modal-duration{
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
 }
