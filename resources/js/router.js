@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from './views/Login.vue'
-import Dashboard from './views/Dashboard.vue'
 import Register from './views/Register.vue'
 import NotFound from './views/NotFound.vue'
 import MasterLayout from './components/MasterLayout.vue'
+import Dashboard from './views/Dashboard.vue'
+import Calendar from './views/Calendar.vue'
 
 const routes = [
   {
@@ -23,8 +24,19 @@ const routes = [
       {
         path: '',
         name: 'dashboard',
-        component: Dashboard,
-      }
+        component: Dashboard
+      },
+    ]
+  },
+  {
+    path: '/calendar',
+    component: MasterLayout,
+    children: [
+      {
+        path: '',
+        name: 'calendar',
+        component: Calendar
+      },
     ]
   },
   {

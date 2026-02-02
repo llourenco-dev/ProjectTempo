@@ -18,6 +18,10 @@ Route::get('/dashboard', function () {
     return view('app');
 })->name('dashboard');
 
+Route::get('/calendar', function () {
+    return view('app');
+})->name('calendar');
+
 Route::get('/{any}', function () {
     return view('app');
 })->where('any', '.*');
